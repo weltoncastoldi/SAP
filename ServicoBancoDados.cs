@@ -1,11 +1,8 @@
 ﻿using Dapper;
 using Sap_Saep.Entidades;
-using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sap_Saep
 {
@@ -30,6 +27,42 @@ namespace Sap_Saep
                 var resultado = conexao.QueryFirstOrDefault<Professor>(sql, parametros);
 
                 return resultado;
+            }
+        }
+
+        public List<Turma> ObterTurmasDoProfessor(int professorId)
+        {
+            using(var conexao =new SqlConnection(StringConexao))
+            {
+                var sql = @"SELECT Id, Nome FROM Turma WHERE IdProfessor = @idProfessor";
+
+                var parametros = new DynamicParameters();
+                parametros.Add("@idProfessor", professorId);
+
+                conexao.Open();
+
+                var resultado = conexao.Query<Turma>(sql, parametros).ToList();
+
+                return resultado;
+            }
+        }
+
+        public bool CadastrarTurma(string nome, int professorId)
+        {
+            using(var conexao =new SqlConnection(StringConexao))
+            {
+                var sql = @"INSERT INTO Turma (Nome, IdProfessor)
+                            VALUES(@nome, @idProfessor)";
+
+                var parametros = new DynamicParameters();
+                parametros.Add("@nome", nome);
+                parametros.Add("@idProfessor", professorId);
+
+                conexao.Open();
+
+                var resultado = conexao.Execute(sql, parametros);
+
+                return resultado > 0;
             }
         }
     }

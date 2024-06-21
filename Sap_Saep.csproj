@@ -50,17 +50,33 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entidades\Professor.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Entidades\Turma.cs" />
+    <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTurmaCadastrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTurmaCadastrar.Designer.cs">
+      <DependentUpon>frmTurmaCadastrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTurmas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTurmas.Designer.cs">
+      <DependentUpon>frmTurmas.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServicoBancoDados.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="frmTurmaCadastrar.resx">
+      <DependentUpon>frmTurmaCadastrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTurmas.resx">
+      <DependentUpon>frmTurmas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

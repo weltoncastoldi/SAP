@@ -1,6 +1,6 @@
 ﻿namespace Sap_Saep
 {
-    partial class Form1
+    partial class frmLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -116,4 +116,3 @@
         private System.Windows.Forms.Label label3;
     }
 }
-
